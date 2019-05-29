@@ -1,0 +1,10 @@
+/bin/
+.idea/encodings.xml
+.idea/vcs.xml
+ArcherSimulation.iml
+.idea/workspace.xml
+.project
+.idea/modules.xml
+.idea/misc.xml
+.classpath
+.idea/checkstyle-idea.xml

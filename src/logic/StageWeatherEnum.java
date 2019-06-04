@@ -1,18 +1,18 @@
 package logic;
 
 /**
- * Enumerado que permite definir el tipo de escenario en que se llevará cabo
+ * Enumerado que permite definir el tipo de escenario en que se llevar a cabo
  * cada partida.
  * 
- * @author Duvis Alejandro Gómez Neira
+ * @author Duvis Alejandro GÃ³mez Neira
  * @version 1.0
  */
 public enum StageWeatherEnum {
 	/**
-	 * Tipos de escensarios que serán tomados como características exógenas de la
-	 * simulación.
+	 * Tipos de escensarios que ser tomados como caracterÃ­sticas exÃ³genas de la
+	 * simulaciÃ³n.
 	 */
-	RAIN("lluvia"), WIND("Viento"), NORMAL("Normal"), RAINANDWIND("Lluvia y viento");
+	RAIN("lluvia"), WIND("Viento"), NORMAL("Normal");
 
 	String genre;
 

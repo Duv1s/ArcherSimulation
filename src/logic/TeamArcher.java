@@ -5,177 +5,173 @@ import java.util.GregorianCalendar;
 import java.util.Random;
 
 /**
- * 
- * @author Duvis Alejandro GÛmez Neira
+ * Clase que permite definir el concepto de un equipo de arqueros
+ * @author Duvis Alejandro G√≥mez Neira
  * @version 1.0
  */
 @SuppressWarnings("serial")
 public class TeamArcher extends ArrayList<TeamArcher> {
-	ArrayList<Archer> listPlayer;
-	private Random randomGeder;
-	public static final int NUMBER_PARTICIPANTS = 20;
+	public static final int NUMBER_ARCHERS = 20;
+	ArrayList<Archer> listArcher;
+	private Random randomGender;
 	private ManagerArcher managerArcher;
-	private GestorShot gestorShot;
+	private ManagerShot managerShot;
 	private String nameTeam;
 	private int pointGame;
 	private double teamShotDistance;
 
 	/**
-	 * constrcutor con parametro para los equipos de la primera ronda
+	 * M√©todo constructor de la clase Equipo de Arqueros
+	 * @param name Nombre del equipo
 	 */
 	public TeamArcher(String name) {
 		this.nameTeam = name;
-		listPlayer = new ArrayList<>();
-		randomGeder = new Random();
+		listArcher = new ArrayList<>();
+		randomGender = new Random();
 		managerArcher = new ManagerArcher();
-		gestorShot = new GestorShot();
+		managerShot = new ManagerShot();
 		personAddTeam();
-		managerArcher.archerDefinePrecision(listPlayer);
-		managerArcher.archerAttributesR(listPlayer);
-		gestorShot.shotAttributesPerson(listPlayer);
+		managerArcher.archerDefinePrecision(listArcher);
+		managerArcher.archerDefineResistenceAndLuck(listArcher);
+		managerShot.makeShot(listArcher);
 	}
 
+	/**
+	 * M√©todo que permite definir el tipo de escenario(Clima) en el cual se jugara cada partida
+	 * @return
+	 */
 	public int stageRandom() {
 		Random random = new Random();
-		return random.nextInt(4);
+		return random.nextInt(4); 
 	}
 
 	/**
-	 * constructor sin parametros para los equipos de la segunda ronda en adelante
+	 * M√©todo constructor sobreescrito sin parametros para la creaci√≥n de equipos de la segunda ronda en adelante.
 	 */
 	public TeamArcher() {
-		listPlayer = new ArrayList<>();
-		randomGeder = new Random();
+		listArcher = new ArrayList<>();
+		randomGender = new Random();
 		managerArcher = new ManagerArcher();
-		gestorShot = new GestorShot();
-		// personAddTeam();esta linea me hizo sufrir :/
+		managerShot = new ManagerShot();
 	}
 
 	/**
-	 * aÒdir personas al equipo
+	 * Metodo que perimte a√±adir agregar una cantidad n de arqueros a un equipo.
 	 */
 	public void personAddTeam() {
-		for (int i = 0; i < NUMBER_PARTICIPANTS; i++) {
-			listPlayer.add(new Archer(genre(), Integer.toString(i + 1), new GregorianCalendar().getTime()));
+		for (int i = 0; i < NUMBER_ARCHERS; i++) {
+			listArcher.add(new Archer(gender(), "Arquero" + Integer.toString(i + 1), new GregorianCalendar().getTime()));
 		}
 	}
 
 	/**
-	 * generar un genero aleatorio para una persona
-	 * 
+	 * M√©todo que permite generar un g√©nero psudo-aleatorio a un aequero.
 	 * @return
 	 */
-	public GenderEnum genre() {
-		int genre = randomGeder.nextInt(2);
+	public GenderEnum gender() {
+		int genre = randomGender.nextInt(2);
 		if (genre == 1) {
 			return GenderEnum.MALE;
 		} else
 			return GenderEnum.FEMALE;
 	}
 
-	//CreaciÛn de los mÈtodos setters y getters
+	//Creaci√≥n de los m√©todos setters y getters
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad listPlayer
+	 * @return  M√©todo que obtiene el valor de la propiedad listPlayer.
 	 */
 	public ArrayList<Archer> getListPlayer() {
-		return listPlayer;
+		return listArcher;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad listPlayer.
+	 * @param M√©todo que asigna el valor de la propiedad listPlayer.
 	 */
 	public void setListPlayer(ArrayList<Archer> listPlayer) {
-		this.listPlayer = listPlayer;
+		this.listArcher = listPlayer;
 	}
 
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad randomGenre
+	 * @return  M√©todo que obtiene el valor de la propiedad randomGeder.
 	 */
-	public Random getRandomGenre() {
-		return randomGeder;
+	public Random getRandomGeder() {
+		return randomGender;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad randomGenre.
+	 * @param M√©todo que asigna el valor de la propiedad randomGeder.
 	 */
-	public void setRandomGenre(Random randomGenre) {
-		this.randomGeder = randomGenre;
+	public void setRandomGeder(Random randomGeder) {
+		this.randomGender = randomGeder;
 	}
 
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad gestorPerson
+	 * @return  M√©todo que obtiene el valor de la propiedad managerArcher.
 	 */
-	public ManagerArcher getGestorPerson() {
+	public ManagerArcher getManagerArcher() {
 		return managerArcher;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad gestorPerson.
+	 * @param M√©todo que asigna el valor de la propiedad managerArcher.
 	 */
-	public void setGestorPerson(ManagerArcher gestorPerson) {
-		this.managerArcher = gestorPerson;
+	public void setManagerArcher(ManagerArcher managerArcher) {
+		this.managerArcher = managerArcher;
 	}
 
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad gestorShot
+	 * @return  M√©todo que obtiene el valor de la propiedad gestorShot.
 	 */
-	public GestorShot getGestorShot() {
-		return gestorShot;
+	public ManagerShot getGestorShot() {
+		return managerShot;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad gestorShot.
+	 * @param M√©todo que asigna el valor de la propiedad gestorShot.
 	 */
-	public void setGestorShot(GestorShot gestorShot) {
-		this.gestorShot = gestorShot;
+	public void setGestorShot(ManagerShot gestorShot) {
+		this.managerShot = gestorShot;
 	}
 
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad nameTeam
+	 * @return  M√©todo que obtiene el valor de la propiedad nameTeam.
 	 */
 	public String getNameTeam() {
 		return nameTeam;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad nameTeam.
+	 * @param M√©todo que asigna el valor de la propiedad nameTeam.
 	 */
 	public void setNameTeam(String nameTeam) {
 		this.nameTeam = nameTeam;
 	}
 
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad pointGame
+	 * @return  M√©todo que obtiene el valor de la propiedad pointGame.
 	 */
 	public int getPointGame() {
 		return pointGame;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad pointGame.
+	 * @param M√©todo que asigna el valor de la propiedad pointGame.
 	 */
 	public void setPointGame(int pointGame) {
 		this.pointGame = pointGame;
 	}
 
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad teamShotDistance
+	 * @return  M√©todo que obtiene el valor de la propiedad teamShotDistance.
 	 */
 	public double getTeamShotDistance() {
 		return teamShotDistance;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad teamShotDistance.
+	 * @param M√©todo que asigna el valor de la propiedad teamShotDistance.
 	 */
 	public void setTeamShotDistance(double teamShotDistance) {
 		this.teamShotDistance = teamShotDistance;
-	}
-
-	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad numberParticipants
-	 */
-	public static int getNumberParticipants() {
-		return NUMBER_PARTICIPANTS;
 	}
 }

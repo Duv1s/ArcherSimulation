@@ -1,8 +1,8 @@
 package logic;
 
 /**
- * Clase que permite defininir la infomraciÛn del disparo de cada flecha
- * @author Duvis Alejandro GÛmez Neira
+ * Clase que permite defininir la infomraci√≥n del disparo de cada flecha
+ * @author Duvis Alejandro G√≥mez Neira
  * @version 1.0
  */
 public class Shot {
@@ -11,9 +11,9 @@ public class Shot {
 	private int velocity;
 
 	/**
-	 * MÈtodo constructor de la clase arquero
+	 * M√©todo constructor de la clase Disparo
 	 * 
-	 * @param angle    ¡ngulo de disparo de la flecha.
+	 * @param angle    √Ångulo de disparo de la flecha.
 	 * @param velocity Velocidad de disparo de la flecha.
 	 */
 	public Shot(int angle, int velocity) {
@@ -21,47 +21,46 @@ public class Shot {
 		this.velocity = velocity;
 	}
 
-	//CreaciÛn de los mÈtodos setters y getters
+	//Creaci√≥n de los m√©todos setters y getters
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad angle
+	 * @return  M√©todo que obtiene el valor de la propiedad angle.
 	 */
 	public int getAngle() {
 		return angle;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad angle.
+	 * @param M√©todo que asigna el valor de la propiedad angle.
 	 */
 	public void setAngle(int angle) {
 		this.angle = angle;
 	}
 
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad distance
+	 * @return  M√©todo que obtiene el valor de la propiedad distance.
 	 */
 	public double getDistance() {
 		return distance;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad distance.
+	 * @param M√©todo que asigna el valor de la propiedad distance.
 	 */
 	public void setDistance(double distance) {
 		this.distance = distance;
 	}
 
 	/**
-	 * @return MÈtodo que obtiene el valor de la propiedad velocity
+	 * @return  M√©todo que obtiene el valor de la propiedad velocity.
 	 */
 	public int getVelocity() {
 		return velocity;
 	}
 
 	/**
-	 * @param MÈtodo que asigna el valor de la propiedad velocity.
+	 * @param M√©todo que asigna el valor de la propiedad velocity.
 	 */
 	public void setVelocity(int velocity) {
 		this.velocity = velocity;
 	}
-
 }

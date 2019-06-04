@@ -3,98 +3,100 @@ package logic;
 import java.util.ArrayList;
 
 /**
- * 
- * @author Duvis Alejandro Gómez Neira
+ * Clase que permite realizar la gestion de rondas.
+ *@author Duvis Alejandro GÃ³mez Neira
  * @version 1.0
  */
 public class Round {
-	private int numberRoubd;
-	private ArrayList<TeamArcher> listTeam;
+	private int numberRound;
+	private ArrayList<TeamArcher> listTeamArcher;
 	private Archer roundWinnerA;
 	private Archer roundWinnerB;
 	private TeamArcher teamWinner;
 
+	/**
+	 * MÃ©todo constructor de la clase Ronda
+	 */
 	public Round() {
 	}
 
 	/**
-	 * constrcutor
-	 * 
-	 * @param number
-	 * @param list
+	 * MÃ©todo constructor de la clase Ronda
+	 * @param numberRound NÃºmero de la ronda jugada
+	 * @param listTeamArcher Lista del equipo de aruqeros
 	 */
-	public Round(int number, ArrayList<TeamArcher> list) {
-		this.listTeam = list;
-		this.numberRoubd = number;
+	public Round(int numberRound, ArrayList<TeamArcher> listTeamArcher) {
+		this.listTeamArcher = listTeamArcher;
+		this.numberRound = numberRound;
 
 	}
 
-	//Creación de los métodos setters y getters
+	//CreaciÃ³n de los mÃ©todos setters y getters
 	/**
-	 * @return Método que obtiene el valor de la propiedad numberRoubd
+	 * @return  MÃ©todo que obtiene el valor de la propiedad numberRound.
 	 */
-	public int getNumberRoubd() {
-		return numberRoubd;
+	public int getNumberRound() {
+		return numberRound;
 	}
 
 	/**
-	 * @param Método que asigna el valor de la propiedad numberRoubd.
+	 * @param MÃ©todo que asigna el valor de la propiedad numberRound.
 	 */
-	public void setNumberRoubd(int numberRoubd) {
-		this.numberRoubd = numberRoubd;
+	public void setNumberRound(int numberRound) {
+		this.numberRound = numberRound;
 	}
 
 	/**
-	 * @return Método que obtiene el valor de la propiedad listTeam
+	 * @return  MÃ©todo que obtiene el valor de la propiedad listTeam.
 	 */
 	public ArrayList<TeamArcher> getListTeam() {
-		return listTeam;
+		return listTeamArcher;
 	}
 
 	/**
-	 * @param Método que asigna el valor de la propiedad listTeam.
+	 * @param MÃ©todo que asigna el valor de la propiedad listTeam.
 	 */
 	public void setListTeam(ArrayList<TeamArcher> listTeam) {
-		this.listTeam = listTeam;
+		this.listTeamArcher = listTeam;
 	}
 
 	/**
-	 * @return Método que obtiene el valor de la propiedad roundWinnerA
+	 * @return  MÃ©todo que obtiene el valor de la propiedad roundWinnerA.
 	 */
 	public Archer getRoundWinnerA() {
 		return roundWinnerA;
 	}
 
 	/**
-	 * @param Método que asigna el valor de la propiedad roundWinnerA.
+	 * @param MÃ©todo que asigna el valor de la propiedad roundWinnerA.
 	 */
 	public void setRoundWinnerA(Archer roundWinnerA) {
 		this.roundWinnerA = roundWinnerA;
 	}
 
 	/**
-	 * @return Método que obtiene el valor de la propiedad roundWinnerB
+	 * @return  MÃ©todo que obtiene el valor de la propiedad roundWinnerB.
 	 */
 	public Archer getRoundWinnerB() {
 		return roundWinnerB;
 	}
 
 	/**
-	 * @param Método que asigna el valor de la propiedad roundWinnerB.
+	 * @param MÃ©todo que asigna el valor de la propiedad roundWinnerB.
 	 */
 	public void setRoundWinnerB(Archer roundWinnerB) {
 		this.roundWinnerB = roundWinnerB;
 	}
 
 	/**
-	 * @return Método que obtiene el valor de la propiedad teamWinner
+	 * @return  MÃ©todo que obtiene el valor de la propiedad teamWinner.
 	 */
 	public TeamArcher getTeamWinner() {
 		return teamWinner;
 	}
 
 	/**
-	 * @param Método que asigna el valor de la propiedad teamWinner.
+	 * @param MÃ©todo que asigna el valor de la propiedad teamWinner.
 	 */
 	public void setTeamWinner(TeamArcher teamWinner) {
 		this.teamWinner = teamWinner;

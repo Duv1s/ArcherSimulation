@@ -1,8 +1,8 @@
 package logic;
 
 /**
- * Enumerado que permite definir los géneros de cada arquero.
- * @author Duvis Alejandro Gómez Neira
+ * Enumerado que permite definir los gÃ©neros de cada arquero.
+ * @author Duvis Alejandro GÃ³mez Neira
  * @version 1.0
  */
 public enum GenderEnum {

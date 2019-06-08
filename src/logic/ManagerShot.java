@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Clase que permite calcular la distancia de una flecha a partir de la formula
+ * Clase que permite calcular la distancia de una flecha a partir de la fórmula
  * del movimiento parabólico.
  * 
  * @author Duvis Alejandro Gómez Neira
@@ -21,6 +21,17 @@ public class ManagerShot {
 	public ManagerShot() {
 		this.randomAngle = new Random();
 		this.randomVelocity = new Random();
+	}
+	
+	/**
+	 * Método que permite calcular una distancia teniendo en cuenta la ecuación del movimietno parabólico.
+	 * @param velocity Velocidad inicial del objeto
+	 * @param angle Ángulo del objeto.
+	 * @return
+	 */
+	public double calculateDistance(int velocity, int angle) {
+		//Ecuación --> ((VelocidadInicial)^2 * Sen(2*Theta))/Gravedad
+		return (Math.pow(velocity, 2) * Math.sin(Math.toRadians(2 * angle)) / 9.8);
 	}
 
 	/**
@@ -51,16 +62,6 @@ public class ManagerShot {
 		}
 	}
 
-	/**
-	 * Método que permite calcular una distancia teniendo en cuenta la ecuación del movimietno parabólico.
-	 * @param velocity Velocidad inicial del objeto
-	 * @param angle Ángulo del objeto.
-	 * @return
-	 */
-	public double calculateDistance(int velocity, int angle) {
-		//Ecuación --> ((VelocidadInicial)^2 * Sen(2*Theta))/Gravedad
-		return (Math.pow(velocity, 2) * Math.sin(Math.toRadians(2 * angle)) / 9.8);
-	}
 
 	/**
 	 * Método que permite generar un valor pseudo-aleatorio entre 26-34

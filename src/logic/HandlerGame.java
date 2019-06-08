@@ -23,7 +23,7 @@ public class HandlerGame {
 	// Parámetros dados para la simulación
 	public static final int NUMBER_TEAMS = 2;
 	public static final double FACTOR_LUCK = 0.05;
-	public static final int NUMBER_ROUNDS = 500; // Cabmiar a 500
+	public static final int NUMBER_ROUNDS = 500;
 
 	private ArrayList<Integer> listLuckPoint;
 	private ArrayList<Integer> listExperiencePoint;
@@ -547,14 +547,6 @@ public class HandlerGame {
 		}
 	}
 
-	/**
-	 * se le ingresa la posicion de un jugador y la busca en la lista y añade un
-	 * tiro adicional a la persona con mas suerte, ademas llama el metodo de
-	 * verificar si una persona tiene tres tiros de suerte consecutivos Método que
-	 * perimte
-	 * 
-	 * @param list @
-	 */
 
 	/**
 	 * Método que agrega un tiro adicional a la persona con más suerte de cada
